@@ -6,13 +6,14 @@
     box-sizing: border-box;
 }
 body {
-    background: #313133;
+    background: #000;
     color: #fff;
+    align-items: center;
 }
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/background-image-with-graceful-curved-lines-right-side-copy-space-your-text-left-side_334678-279.avif);
+    background-image: url(images/Untitled\ design\ \(2\).jpg); 
     background-size: cover;
     background-position: center;
 }
@@ -342,6 +343,8 @@ span{
         display: block;
         transition: transform 0.5s;
     }
+
+    
     
     /* Styling for the overlay layer */
     .layer {
@@ -362,7 +365,9 @@ span{
         line-height: 1;
         transition: height 0.5s ease-in-out; /* Transition for height */
     }
-    
+    .arrow-button{
+        background-color: #000;
+    }
     /* Styling for headings within the .layer class */
     .layer h3 {
         font-weight: bold;
