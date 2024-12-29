@@ -573,7 +573,49 @@ span{
     .formm form {
         width: 100%;
     }
-    
+    /* Style for the popup */
+.popup-message {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .popup-content button {
+    background-color: #fff;
+    color: black;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-content button:hover {
+    background-color: #e2e2e2;
+  }
+  
+  /* Overlay (optional, if you want to darken the background) */
+  .popup-message:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  
     form input, form textarea {
         width: 100%;
         border: 0;
