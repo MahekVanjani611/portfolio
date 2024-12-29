@@ -180,7 +180,7 @@
             <div id="successMessage" class="popup-message">
                 <div class="popup-content">
                   <p>Thank you for your submission! We will get back to you soon.</p>
-                  <button onclick="closepopup()">Close</button>
+                  <button onclick="closePopup()">Close</button>
                 </div>
               </div>
               
@@ -309,7 +309,7 @@
           console.error('Error!', error.message);
         });
     })
-    function closepopup() {
+    function closePopup() {
     document.getElementById("successMessage").style.display = "none";
   }
   </script>
