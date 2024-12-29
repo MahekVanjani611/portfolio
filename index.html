@@ -177,6 +177,13 @@
                 <button type="submit" class="btn btn2">Submit Form</button>
 
             </form>
+            <div id="successMessage" class="popup-message">
+                <div class="popup-content">
+                  <p>Thank you for your submission! We will get back to you soon.</p>
+                  <button onclick="closePopup()">Close</button>
+                </div>
+              </div>
+              
         </div>
         <div class="contact-container">
             <div class="contact-box">
@@ -270,17 +277,47 @@
     function closemenu(){
         sidemenu.style.right="-200px";
     }
+
 </script>
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz4LcJQBZJVCff_n4z3LKIZP_NIqUDVoXyJ4prOyQo3PZVz4K32DShkmIDBiWoohc6TBA/exec'
     const form = document.forms['submit-to-google-sheet']
   
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
+      e.preventDefault();
+  
+      // Declare formData before using it
+      const formData = new FormData(form);
+  
+      // Log form data (optional)
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+  
+      // Display success message
+      document.getElementById("successMessage").style.display = "block";
+  
+      // Optionally, you can reset the form fields
+      e.target.reset();
+  
+      // Send the form data to the Google Sheets script
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          console.log('Success!', response);
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+        });
     })
+      function closePopup() {
+    document.getElementById("successMessage").style.display = "none";
+  }
   </script>
+  
+  
+ 
+
+  
+ 
 
 </html> 
