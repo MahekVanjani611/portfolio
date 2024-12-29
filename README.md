@@ -1,4 +1,4 @@
-**Portfolio**
+## Personal Portfolio
 This is a personal portfolio website showcasing my projects, skills, and professional background. The website serves as a platform to highlight my work and provide contact information for potential collaborations and opportunities.
 
 **Features**
